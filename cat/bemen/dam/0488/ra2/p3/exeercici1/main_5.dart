@@ -1,4 +1,12 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
+
+class Message {
+  final String author;
+  final String body;
+
+  Message(this.author, this.body);
+}
 
 void main() {
   runApp(const MainApp());
@@ -9,10 +17,64 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    // Lista de nombres
+    final names = [
+      "Ellison Curry",
+      "Briggs Willis",
+      "Alexa Murphy",
+      "Cameron Berry",
+      "Annabelle Villarreal",
+      "Nikolai Wiley",
+      "Lauryn Morrow",
+      "Kyree Hardy",
+      "Wells Wilson",
+      "Luna Foster",
+      "Kayden Taylor",
+      "Sofia Mann",
+      "Nehemiah Randall",
+      "Christina Gordon",
+      "Karter Kramer",
+      "Hanna Morales",
+      "Megan Delarosa",
+      "Osiris Johnson",
+      "Emma Atkins",
+      "Cason McKee",
+      "Kori Walls",
+      "Larry Shepherd",
+    ];
+
+    // Cos del missatge
+    const body =
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac vestibulum nunc.";
+
+    // Llista de missatges generats aleatòriament
+    final random = Random();
+    final messages = List.generate(100, (index) {
+      return Message(
+        names[random.nextInt(names.length)],
+        body,
+      );
+    });
+
+    return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World 3!'),
+        appBar: AppBar(title: const Text('Missatges')),
+        body: ListView.builder(
+          itemCount: messages.length,
+          itemBuilder: (context, index) {
+            final msg = messages[index];
+            return Card(
+              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: ListTile(
+                title: Text(msg.author, style: const TextStyle(fontWeight: FontWeight.bold)),
+                subtitle: Text(msg.body),
+              ),
+            );
+          },
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add),
         ),
       ),
     );
