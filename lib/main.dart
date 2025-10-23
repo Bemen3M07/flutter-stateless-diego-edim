@@ -4,58 +4,65 @@ void main() {
   runApp(const MainApp());
 }
 
+class Contact {
+  final String fullName;
+  final String email;
+  final String phone;
+
+  Contact({
+    required this.fullName,
+    required this.email,
+    required this.phone,
+  });
+}
+
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    // Objecte creat amb les dades demanades
+    final contact = Contact(
+      fullName: "Marta Casserres",
+      email: "marta@example.com",
+      phone: "934748474",
+    );
+
+    return MaterialApp(
       home: Scaffold(
         body: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              //imatge rodona
+              const CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage('assets/marta.jpg'),
+              ),
+
+              //Nom
               Text(
-                'Welcome',
-                style: TextStyle(
-                  fontSize: 32,
+                contact.fullName,
+                style: const TextStyle(
+                  fontSize: 28,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10),
-              Text(
-                'Start learining now',
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.grey,
-                ),
-              ),
-              SizedBox(height: 25),
+              const SizedBox(height: 10),
 
-              // Botón 1
-              ElevatedButton(
-                onPressed: null,
-                style: ButtonStyle(
-                  backgroundColor:
-                      WidgetStatePropertyAll(Color.fromARGB(255, 35, 80, 117)),
+              //caixa gris
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                child: Text(
-                  'Login',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              SizedBox(height: 10),
-
-              // Botón 2
-              ElevatedButton(
-                onPressed: null,
-                style: ButtonStyle(
-                  backgroundColor:
-                      WidgetStatePropertyAll(Color.fromARGB(255, 35, 80, 117)),
-                ),
-                child: Text(
-                  'Register',
-                  style: TextStyle(color: Colors.white),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Email: ${contact.email}"),
+                    Text("Telèfon: ${contact.phone}"),
+                  ],
                 ),
               ),
             ],
