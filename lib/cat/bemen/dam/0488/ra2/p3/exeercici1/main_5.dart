@@ -45,7 +45,7 @@ class MainApp extends StatelessWidget {
 
     // Cuerpo del mensaje
     const body =
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac vestibulum nunc.";
+        "Aprendiendo Flutter Stateless Diego y Edim";
 
     // Llista de missatges generats aleatòriament
     final random = Random();

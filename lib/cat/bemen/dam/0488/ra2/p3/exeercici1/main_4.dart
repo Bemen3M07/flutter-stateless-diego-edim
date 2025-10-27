@@ -23,8 +23,8 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     
     final contact = Contact( // indicamos la informacion del objeto contando
-      fullName: "Marta Casserres",
-      email: "marta@example.com",
+      fullName: "Marta Diaz",
+      email: "marta@bemen3.cat",
       phone: "934748474",
     );
 

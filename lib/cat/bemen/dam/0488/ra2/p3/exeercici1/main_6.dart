@@ -43,7 +43,7 @@ class MainApp extends StatelessWidget {
     ];
 
     const body =
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac vestibulum nunc.";
+        "Flutter Stateless Diego y Edim. Barra de busqueda";
 
     final random = Random();
     final messages = List.generate(100, (index) {
@@ -78,7 +78,7 @@ class MainApp extends StatelessWidget {
         ),
 
         // PARTE AÑADIDA DEL EJERCICIO 6
-        
+
         // indicamos que el boton se quede abajo de la pagina bloqueado para que se siga mostrando incluso cuando bajamos hacia abajo
         floatingActionButtonLocation: FloatingActionButtonLocation.endDocked, 
         bottomNavigationBar: BottomNavigationBar(

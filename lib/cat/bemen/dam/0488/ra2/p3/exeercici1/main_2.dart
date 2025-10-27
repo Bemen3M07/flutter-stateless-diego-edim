@@ -16,7 +16,7 @@ class MainApp extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Welcome',
+                'Hola',
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
@@ -24,7 +24,7 @@ class MainApp extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                'Start learining now',
+                'Aprendiendo Flutter',
                 style: TextStyle(
                   fontSize: 18,
                   color: Colors.grey,
@@ -37,7 +37,7 @@ class MainApp extends StatelessWidget {
                 onPressed: null,
                 style: ButtonStyle(
                   backgroundColor:
-                      WidgetStatePropertyAll(Color.fromARGB(255, 20, 87, 141)),
+                      WidgetStatePropertyAll(Color.fromARGB(255, 88, 31, 126)),
                 ),
                 child: Text(
                   'Login',
@@ -51,7 +51,7 @@ class MainApp extends StatelessWidget {
                 onPressed: null,
                 style: ButtonStyle(
                   backgroundColor:
-                      WidgetStatePropertyAll(Color.fromARGB(255, 20, 87, 141)),
+                      WidgetStatePropertyAll(Color.fromARGB(255, 88, 31, 126)),
                 ),
                 child: Text(
                   'Register',
