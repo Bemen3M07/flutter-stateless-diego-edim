@@ -43,14 +43,14 @@ class MainApp extends StatelessWidget {
       "Larry Shepherd",
     ];
 
-    // Cos del missatge
+    // Cuerpo del mensaje
     const body =
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac vestibulum nunc.";
 
     // Llista de missatges generats aleatòriament
     final random = Random();
-    final messages = List.generate(100, (index) {
-      return Message(
+    final messages = List.generate(100, (index) { 
+      return Message( // consigue un nombre aleatorio
         names[random.nextInt(names.length)],
         body,
       );
@@ -61,18 +61,21 @@ class MainApp extends StatelessWidget {
         appBar: AppBar(title: const Text('Missatges')),
         body: ListView.builder(
           itemCount: messages.length,
-          itemBuilder: (context, index) {
+          itemBuilder: (context, index) { // metodo lamba
             final msg = messages[index];
-            return Card(
-              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            return Card( // crea las cartas con la informacion
+              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8), // separacion para dentro de las tarjetas
               child: ListTile(
-                title: Text(msg.author, style: const TextStyle(fontWeight: FontWeight.bold)),
-                subtitle: Text(msg.body),
+                title: Text(msg.author, style: const TextStyle(fontWeight: FontWeight.bold)), // nombre del autor aleatorio
+                subtitle: Text(msg.body), // mensaje fijo 
               ),
             );
           },
+
         ),
-        floatingActionButton: FloatingActionButton(
+        
+        // boton que no hace nada (su funcion seria añadir mas cartas con informacion si estuviera configurado)
+        floatingActionButton: FloatingActionButton( 
           onPressed: () {},
           child: const Icon(Icons.add),
         ),

@@ -76,14 +76,18 @@ class MainApp extends StatelessWidget {
           onPressed: () {},
           child: const Icon(Icons.add),
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+
+        // PARTE AÑADIDA DEL EJERCICIO 6
+        
+        // indicamos que el boton se quede abajo de la pagina bloqueado para que se siga mostrando incluso cuando bajamos hacia abajo
+        floatingActionButtonLocation: FloatingActionButtonLocation.endDocked, 
         bottomNavigationBar: BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Inici"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.message), label: "Missatges"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: "Ajustos"),
+          items: const [ // conjunto de botones de navegacion 
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Inici"), // boton de inicio sin funcion
+            
+            BottomNavigationBarItem(icon: Icon(Icons.message), label: "Missatges"), //boton de mensajes sin funcion
+            
+            BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Ajustos"), // boton de ajustes sin funcion
           ],
         ),
       ),

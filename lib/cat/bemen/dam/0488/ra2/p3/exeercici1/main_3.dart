@@ -12,10 +12,8 @@ Widget build(BuildContext context) {
   return MaterialApp(
     home: Scaffold(
       body: Align(
-        alignment: Alignment.topLeft, // coloca todo arriba y centrado horizontalmente
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
+        alignment: Alignment.topLeft, // coloca todo arriba a la izquierda
+        child: Column(
             children: [
               const Text(
                 'Esto es un recurso String',
@@ -27,7 +25,6 @@ Widget build(BuildContext context) {
           ),
         ),
       ),
-    ),
-  );
+    );
 }
 }

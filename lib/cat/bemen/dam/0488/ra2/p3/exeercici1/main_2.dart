@@ -37,7 +37,7 @@ class MainApp extends StatelessWidget {
                 onPressed: null,
                 style: ButtonStyle(
                   backgroundColor:
-                      WidgetStatePropertyAll(Color.fromARGB(255, 35, 80, 117)),
+                      WidgetStatePropertyAll(Color.fromARGB(255, 20, 87, 141)),
                 ),
                 child: Text(
                   'Login',
@@ -51,7 +51,7 @@ class MainApp extends StatelessWidget {
                 onPressed: null,
                 style: ButtonStyle(
                   backgroundColor:
-                      WidgetStatePropertyAll(Color.fromARGB(255, 35, 80, 117)),
+                      WidgetStatePropertyAll(Color.fromARGB(255, 20, 87, 141)),
                 ),
                 child: Text(
                   'Register',

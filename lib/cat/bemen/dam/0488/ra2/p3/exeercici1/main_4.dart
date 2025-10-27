@@ -4,12 +4,12 @@ void main() {
   runApp(const MainApp());
 }
 
-class Contact {
+class Contact { // creamos la clase que contendra la informacion del contacto
   final String fullName;
   final String email;
   final String phone;
 
-  Contact({
+  Contact({ 
     required this.fullName,
     required this.email,
     required this.phone,
@@ -21,8 +21,8 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Objecte creat amb les dades demanades
-    final contact = Contact(
+    
+    final contact = Contact( // indicamos la informacion del objeto contando
       fullName: "Marta Casserres",
       email: "marta@example.com",
       phone: "934748474",
@@ -34,28 +34,29 @@ class MainApp extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              //imatge rodona
+              // imagen redonda
               const CircleAvatar(
-                radius: 50,
-                backgroundImage: AssetImage('assets/senora.jpg'),
+                radius: 50, // indicamos el espacio que ocupa 
+                backgroundImage: AssetImage('assets/senora.jpg'), // imagen que tendra de fondo el objeto 
               ),
 
-              //Nom
+              //Nombre 
               Text(
-                contact.fullName,
-                style: const TextStyle(
+                contact.fullName, // llamamos a la clase contact.fullName que contiene la informacion del nombre
+                style: const TextStyle( // estilo del texto
                   fontSize: 36,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 10),
 
-              //caixa gris
+              // caja 
               Center(
                 child: Container(
-                  width: 220, // 👉 amplada més petita (pots ajustar-ho)
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
+                  width: 220, 
+                  // en la linea 58 el EdgeInsets se encarga de aplicar un margen a todos los objetos dentro de la caja para que haya una separacion con los bordes
+                  padding: const EdgeInsets.all(16), 
+                  decoration: BoxDecoration( 
                     color: Colors.grey[300],
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -63,18 +64,18 @@ class MainApp extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
-                        children: [
-                          const Icon(Icons.email),
+                        children: [ // email
+                          const Icon(Icons.email), // icono de correo (nativo del flutter)
                           const SizedBox(width: 8),
-                          Text(contact.email),
+                          Text(contact.email), // muestra la informacion del objeto
                         ],
                       ),
                       const SizedBox(height: 8),
                       Row(
                         children: [
-                          const Icon(Icons.phone),
+                          const Icon(Icons.phone), // icono de telefono (nativo tambien de fluter)
                           const SizedBox(width: 8),
-                          Text(contact.phone),
+                          Text(contact.phone), // muestra la informacion del objeto
                         ],
                       ),
                     ],
