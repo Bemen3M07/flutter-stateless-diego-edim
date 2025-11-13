@@ -23,7 +23,6 @@ class Producto {
 }
 
 class _MainAppState extends State<MainApp> {
-  String _message = "";
   final TextEditingController _controler1 = TextEditingController();
   final TextEditingController _controler2 = TextEditingController();
   List<Producto> productos = []; // lista que guardará los textos
