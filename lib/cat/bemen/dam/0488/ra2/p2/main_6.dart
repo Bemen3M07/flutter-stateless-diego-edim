@@ -6,22 +6,41 @@ void main() {
 
 class MainApp extends StatefulWidget {
   const MainApp({super.key});
-
+  
   @override
   State<MainApp> createState() => _MainAppState();
 }
 
+  
+class Producto {
+  final String nombre;
+  final int cantidad;
+
+  Producto({
+    required this.nombre,
+    required this.cantidad,
+  });
+}
+
 class _MainAppState extends State<MainApp> {
   String _message = "";
-  final TextEditingController _controller = TextEditingController();
-  List<String> items = []; // lista que guardará los textos
+  final TextEditingController _controler1 = TextEditingController();
+  final TextEditingController _controler2 = TextEditingController();
+  List<Producto> productos = []; // lista que guardará los textos
   // variables de cambios
-  void _updateMessage() {
-    setState(() {
-                            items.add(_controller.text); // agregamos el texto a la lista
-                            _controller.clear(); // limpiamos el campo de texto
-                          });
-  }
+void _updateMessage() {
+  setState(() {
+    final producto = Producto(
+      nombre: _controler1.text,
+      cantidad: int.parse(_controler2.text),
+    );
+
+    productos.add(producto);
+    _controler1.clear();
+    _controler2.clear();
+  });
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +49,7 @@ class _MainAppState extends State<MainApp> {
         backgroundColor:Colors.white,
         body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center , 
             children: [
               
               // Cuadro de texto
@@ -38,7 +57,7 @@ class _MainAppState extends State<MainApp> {
                 width: 350,
                 padding: EdgeInsets.all(16), // opcional, para separar los campos del borde
                 decoration: BoxDecoration(
-                  color: Colors.blueGrey, // color de fondo del container
+                  color: const Color.fromARGB(255, 129, 87, 202), // color de fondo del container
                   borderRadius: BorderRadius.circular(12), // opcional, bordes redondeados
                 ),
                 child: Column(
@@ -46,7 +65,7 @@ class _MainAppState extends State<MainApp> {
                   children: [
                     // nombre
                     TextField(
-                      controller: _controller, // input que recibe el texto
+                      controller: _controler1, // input que recibe el texto
                       decoration: InputDecoration(
                         labelText: 'Nombre',
                         border: OutlineInputBorder(),
@@ -59,9 +78,10 @@ class _MainAppState extends State<MainApp> {
 
                     // cantidad
                     TextField(
-                      controller: _controller, // input que recibe el texto
+                      controller: _controler2, // input que recibe el texto
                       decoration: InputDecoration(
                         labelText: 'Cantidad',
+                        hintText: 'Solo numeros',
                         border: OutlineInputBorder(),
                         filled: true,
                         fillColor: Colors.grey[200],
@@ -74,7 +94,7 @@ class _MainAppState extends State<MainApp> {
                     ElevatedButton(
                       onPressed: _updateMessage,
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromARGB(255, 78, 168, 93),
+                        backgroundColor: const Color.fromARGB(255, 22, 151, 43),
                       ),
                       child: const Text("añadir producto", // texto del boton
                         style: TextStyle(color: Colors.black),
@@ -86,25 +106,22 @@ class _MainAppState extends State<MainApp> {
               // ////////////////////////
               const SizedBox(height: 20),
               
-              // boton
-              ElevatedButton(
-                onPressed: _updateMessage,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 78, 168, 93),
-                ),
-                child: const Text("Enviar mensaje", // texto del boton
-                  style: TextStyle(color: Colors.black),
-                ),
-              ),
-
-              // ////////////////////////
-              const SizedBox(height: 20),
-              
               // contenedor de texto
               Expanded(
-              child: ListView(
-                children: items.map((item) => Text(item)).toList(),
-              ),
+                child: ListView(
+                  children: productos.map((p) => Card(
+                  elevation: 3,
+                  color: const Color.fromARGB(255, 144, 145, 209),
+                  margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: ListTile(
+                    title: Text(p.nombre, style: TextStyle(fontWeight:  FontWeight.bold) ),
+                    subtitle: Text('Cantidad: ${p.cantidad}'),
+                  ),
+                )).toList(),
+                ),
               ),
             ],
           ),
