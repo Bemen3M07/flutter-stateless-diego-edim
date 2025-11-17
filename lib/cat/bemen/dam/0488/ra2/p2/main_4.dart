@@ -45,10 +45,15 @@ void _updateMessage() {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor:Colors.white,
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center , 
+        
+        body: Container(
+                decoration: BoxDecoration(
+                image: DecorationImage(
+                image: AssetImage("assets/background-dice.jpg"),
+                fit: BoxFit.cover,
+              ),
+              ),
+              child: Column( 
             children: [
               
               // Cuadro de texto
