@@ -1,4 +1,6 @@
+import 'package:Edim_Diego/providers/counter_provider.dart';
 import'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Page3 extends StatefulWidget{
   const Page3({super.key});
@@ -12,7 +14,9 @@ class _Page1State extends State<Page3> {
   @override
  Widget build(BuildContext context) {
   return Center(
-    child: Text('Page 3'),
+    child: Text(context.watch<CounterProvider>().counter.toString(),
+      style: const TextStyle(fontSize: 50)
+    )
   );
  }
 }

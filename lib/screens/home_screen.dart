@@ -1,4 +1,6 @@
+import 'package:Edim_Diego/providers/counter_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../pages/page1.dart';
 import '../pages/page2.dart';
@@ -28,6 +30,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('app bar'),
+        actions: [
+          TextButton(onPressed: null, child: Text(
+            context.watch<CounterProvider>().counter.toString(),
+            style: const TextStyle(color: Colors.white),
+          )
+          )
+        ],
       ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
