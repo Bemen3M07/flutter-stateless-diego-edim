@@ -14,13 +14,13 @@ class _Main4State extends State<Main4> {
   int dado1 = 0;
   int dado2 = 0;
 
-  final List<String> imagenes = [
-    "assets/dado-1.png",
-    "assets/dado-2.png",
-    "assets/dado-3.png",
-    "assets/dado-4.png",
-    "assets/dado-5.png",
-    "assets/dado-6.png",
+  List<String> imagenes = [
+    "assets/dice1.png",
+    "assets/dice2.png",
+    "assets/dice3.png",
+    "assets/dice4.png",
+    "assets/dice5.png",
+    "assets/dice6.png",
   ];
 
   void _lanzarDados() {
