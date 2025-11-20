@@ -2,37 +2,29 @@
 # empty
 
 Ejercicio 1
-En el ejercicio uno lo unico que hicimos fue mover el main_1 dentro del lib junto con los otros main y cambiamos el Hello world por Hola bemen3 para diferenciarnos un poco de los compañeros
+
+En este ejercicio mostramos una pantalla doe Flutter donde podemos cambiar el mensaje usando dos botones. Al pulsarlos el texto pasa a "Good morning" o "Good night" gracias a setState() que actualiza la interfaz al instante. Hemos organizado los elementos en una columna con espacios y botones con estilo personalizado para que se vea ordenado.
 
 Ejercicio 2 
-Para el ejercicio 2 unicamente tuvimos que añadir un texto junto a dos botones que para tener el texto y debajo los botones utilizamos el SizedBox(height: 10), que se encargaba de hacer una pequeña separacion entre cada objeto
+
 
 Ejercicio 3
-En el ejercicio 3 creamos la carpeta "assets" y la configuramos el archivo "pubspec.yaml" para que detectara la carpeta junto con su contenido con las siguientes lineas:
 
-assets:
-    - assets/
-
-Seguidamente tambien utilizamos indicamos el aliniamiento con la siguiente linea "alignment: Alignment.topLeft" que se encarga de poner los objetos arriba a la izquierda para tenerlo como en la imagen mostrada
-
+En este ejercicio hemos utilizado un StatefulWidget que guarda un numero secreto, los intentos y el mensaje como estado interno. Usando un TextEditing Controller y un FocusNode para controlar el campo de texto, limpiarlo y devolver el foco después de cada intento. El número se genera en initState() con _generateNewNumber(), que también resetea intentos y mensaje. Al pulsar “Validar”, _validateGuess() convierte el texto a int, comprueba el valor, actualiza intentos y mensaje dentro de setState() para redibujar la UI. El botón “Nou número” simplemente vuelve a llamar a _generateNewNumber() para reiniciar la partida.
 
 Ejercicio 4
-Para el ejecicio 4 primero de todo creamos una clase la cual contrendria la informacion que se tendria que ver de contacto que luego dentro del codigo se va llamado 
 
-ademas para poder mostrar la imagen utilizamos "CircleAvatar" que nos permite delimitar un circulo con el espacio que ocupa medianteel "radius" para con el "backgroundImage" poder asignar la imagen y que se tenga de fondo 
-
-Seguidamente utilizamos dentro del recuadro con la informacion "padding: const EdgeInsets.all(16)" para poder crear un margen entre el contendor y en contenido que haya dentro para que el contenido no este pegado a los bordes del contenedor
 
 Ejercicio 5
-Primero de todo utilizamos el codigo proporcionado para la selecion aleatoria de nombres y mediante el ItemBuilder nos encargamos de conseguir unos datos aleatorios y crear la carta con la informacion de los datos conseguidos aleatoriamente 
 
-Nuevamente tambien utilizamos el "const EdgeInsets.symmetric(horizontal: 16, vertical: 8)," para poder generar un margen dentro de las targetas y el contenido no este pegado a los contenedores y dentro de la informacion del correo y del telefono justo antes hay un "cons Icons()" que mediante los iconos que tiene de manera nativa flutter les asignamos un icono de una carta y de un telefono para hacerlo como en el ejercicio de muestra
+Este ejercicio funciona creando un StatefulWidget que mantiene dos variables de estado: scoreLeft y scoreRight, cada una representando un marcador independiente. La interfaz muestra ambos valores dentro de un Row, y debajo coloca dos botones que incrementan cada marcador por separado. Cada pulsación ejecuta un setState(), lo que actualiza la UI al instante reflejando el nuevo valor. Todo se organiza con Column y Row para distribuir los elementos de forma sencilla y centrada.
 
 Ejercicio 6
-En el ejercicio 6 añadimos el navegador con la linea "floatingActionButtonLocation: FloatingActionButtonLocation.endDocked" para dejar la barra de busqueda siempre abajo aunque se baje la pagina siempre permanezca en esa ubicacion y mediante la linea:
 
-bottomNavigationBar: BottomNavigationBar
-          items:
 
-Podemos crear los dinstitntos puntos de busqueda del navegador para interactuar en la pagina aunque no funcione 
+Ejercicio 7
+
+En este ejercicio montamos un contador usando Provider en vez de StatefulWidget. En main() envolvemos la app con un ChangeNotifierProvider que crea una instancia de CounterProvider, nuestra clase que extiende ChangeNotifier, guarda el _counter y llama a notifyListeners() cuando hacemos increment(). En Page1 usamos context.watch<CounterProvider>() para escuchar cambios y mostrar el valor actualizado, y context.read<CounterProvider>().increment() en el botón para sumar sin redibujar de más. Así separamos la lógica de estado (Provider) de la UI y dejamos el código más limpio y escalable.
+
+Ejercicio 8
 
