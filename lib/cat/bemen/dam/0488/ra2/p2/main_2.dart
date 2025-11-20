@@ -13,7 +13,7 @@ class MainApp extends StatefulWidget {
 
 class _MainAppState extends State<MainApp> {
   String _message = "";
-  final TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController(); 
   Color backgroundColor = Colors.white;
 
   // variables de cambios
@@ -35,7 +35,7 @@ class _MainAppState extends State<MainApp> {
             children: [
               
               // Cuadro de texto
-              SizedBox( // engloba al textField para poder darle unos limites de tamaño
+              SizedBox( 
                 width: 350,
                 child: TextField(
                   controller: _controller, // input que recibe el texto

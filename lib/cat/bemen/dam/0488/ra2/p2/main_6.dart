@@ -25,8 +25,9 @@ class Producto {
 class _MainAppState extends State<MainApp> {
   final TextEditingController _controler1 = TextEditingController();
   final TextEditingController _controler2 = TextEditingController();
-  List<Producto> productos = []; // lista que guardará los textos
-  // variables de cambios
+  List<Producto> productos = []; // llista de productos
+
+// variables de cambios
 void _updateMessage() {
   setState(() {
     final producto = Producto(
@@ -54,10 +55,10 @@ void _updateMessage() {
               // Cuadro de texto
               Container(
                 width: 350,
-                padding: EdgeInsets.all(16), // opcional, para separar los campos del borde
+                padding: EdgeInsets.all(16), 
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 129, 87, 202), // color de fondo del container
-                  borderRadius: BorderRadius.circular(12), // opcional, bordes redondeados
+                  color: const Color.fromARGB(255, 129, 87, 202), 
+                  borderRadius: BorderRadius.circular(12), // bordes redondeados
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -73,7 +74,7 @@ void _updateMessage() {
                       ),
                     ),
 
-                    const SizedBox(height: 20), // espacio entre los campos
+                    const SizedBox(height: 20), 
 
                     // cantidad
                     TextField(
@@ -102,6 +103,7 @@ void _updateMessage() {
                   ],
                 ),
               ),
+              
               // ////////////////////////
               const SizedBox(height: 20),
               

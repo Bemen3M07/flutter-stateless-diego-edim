@@ -15,7 +15,8 @@ class Page2 extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         actions: [
-          // Botones para acceder a Main1..Main6
+          
+          // Botones para acceder a Main1 al Main6
           TextButton(
             onPressed: () {
               Navigator.push(

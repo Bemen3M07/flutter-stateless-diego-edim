@@ -20,6 +20,7 @@ class _Page1State extends State<Page1> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         actions: [
+          // Botones para acceder a Main1 al Main6
           TextButton(
             onPressed: () {
               Navigator.push(

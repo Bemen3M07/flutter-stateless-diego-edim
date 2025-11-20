@@ -18,14 +18,13 @@ class _MainAppState extends State<MainApp> {
   int dado1 = 0;
   int dado2 = 0;
 
-
   List<String> imagenes = [
-    "assets/dado-1.png",
-    "assets/dado-2.png",
-    "assets/dado-3.png",
-    "assets/dado-4.png",
-    "assets/dado-5.png",
-    "assets/dado-6.png",
+    "assets/dice1.png",
+    "assets/dice2.png",
+    "assets/dice3.png",
+    "assets/dice4.png",
+    "assets/dice5.png",
+    "assets/dice6.png",
   ];
 
   void _updateMessage() {
